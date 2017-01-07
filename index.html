@@ -5,16 +5,43 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Weather API</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Orbitron" rel="stylesheet">
+	<script src="https://use.fontawesome.com/80270d8f99.js"></script>
 	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<link rel="stylesheet" href="CSS/style.css">
+	<link rel="stylesheet" type="text/css" href="CSS/weather-icons.css">
+	<link rel="stylesheet" type="text/css" href="CSS/weather-icons.min.css">
 	<script src="js/API.js"></script>
 </head>
 <body>
-	<div class="container-fluid">
-		<div class="well" id="location"> </div>
-		<h1>You Are Here</h1>
-		<button class="btn btn-primary btn-large" id="quote_btn">Button</button>
+	<div class="main">
+			<div class="container-fluid">
+				<div class="jumbotron">
+						<h1>The Weather Machine Says:</h1>
+						<div class="row">
+							<div class="col-md-7">
+								<div class="well" id="location"> </div>
+							</div>
+
+							<div class="col-md-5">
+								<div id="weather-icon"><i class='wi wi-na'></i></div>
+
+								<div id="temperature"><i class="fa fa-thermometer-full" aria-hidden="true"> No Temperature To Display</i></div>
+
+								<div class="btn-group">
+									<a class="btn btn-default" id="celsius">
+										<i class="wi wi-celsius"></i>
+									</a>
+									<a class="btn btn-default" id="fahrenheit">
+										<i class="wi wi-fahrenheit"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+							<input type="text" placeholder="Search City" class="form-control"">
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
 </body>
 </html>

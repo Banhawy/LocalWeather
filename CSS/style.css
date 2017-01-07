@@ -1,10 +1,72 @@
-body{
+body{ 
+  background: url(https://dl.dropboxusercontent.com/u/45064406/images/logos/WeatherFocusGMAO.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;         /* Generic*/
+  z-index = -1;
+}
+
+h1{
+	font-family: 'Bungee Shade', cursive;
+}
+.main{
+	margin-top: 10%;
+}
+
+.wi{
+	font-size: 5em;
+	color: lime;
+}
+
+.jumbotoron{
+	border: 2px solid #131010;
+	box-shadow: 0px 2px 4px 0px rgba(46,60,73,0.2);
+	background-color: antiquewhite;
+}
+
+.row{
+	background-color: black;
+	border-style: inset;
+	margin-bottom: 4%;
+}
+
+.col-md-5{
+	color: lime;
+	text-align: center;
+	padding-bottom: 1.5em;
+	padding-top: 1.5em;
+}
+
+.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle){
+	background-color: transparent;
+	font-size: 60%;
+}
+
+.btn-group>.btn:last-child:not(:first-child), .btn-group>.dropdown-toggle:not(:first-child){
+	background-color: transparent;
+	font-size: 60%;
 }
 
 .well{
+	background-color: black;
+	color: lime;
 	max-width: 80%;
-	margin: 40px auto;
+	margin: 40px auto auto 0;
 	align-items: center;
-	background-size: cover;
-	
+	border: 0px;
+}
+
+.form-control{
+	width: 30%;
+	text-align: center;
+	margin: 0 30% 0 30%;
+}
+
+#temperature{
+	font-size: 1.5em;
+	font-family: 'Orbitron', sans-serif;
 }
