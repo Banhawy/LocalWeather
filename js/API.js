@@ -11,7 +11,7 @@ $(document).ready(function () {
                 var weatherRegex = data.weather[0].description;
                 var weather = weatherRegex.replace(/\s/, "%20");
                 var weatherID = data.weather[0].id;
-                var apiFlickr = "https://api.flickr.com/services/rest/?method=flickr.photos.search&text=" + weather + "&format=json&nojsoncallback=1&api_key=ec0ca2ee160a19f017eb3ddcbda7ccb4";
+                var apiFlickr = `https://api.flickr.com/services/rest/?method=flickr.photos.search&text=" + weather + "&format=json&nojsoncallback=1&api_key=${process.env.FLICKR_API_KEY}`;
                 var weatherIcon = "<i class='wi wi-owm-"+ weatherID +"'></i>";
 
                 //Display weather on screen
@@ -31,7 +31,7 @@ $(document).ready(function () {
                 $.get(apiFlickr, function(myresult){
                     var random = Math.floor(Math.random() * 100)
                     var id = myresult.photos.photo[random].id;
-                    var photoSizeApi = "https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&photo_id=" + id + "&format=json&nojsoncallback=1&api_key=ec0ca2ee160a19f017eb3ddcbda7ccb4";
+                    var photoSizeApi = `https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&photo_id=" + id + "&format=json&nojsoncallback=1&api_key=${process.env.FLICKR_API_KEY}`;
 
                     //Flickr API imagesize. Gets chosen images' large sizes, and sets background image
                     $.getJSON( photoSizeApi , function(image) {
@@ -51,7 +51,7 @@ $(document).ready(function () {
         navigator.geolocation.getCurrentPosition(function (position){
                 var lat = position.coords.latitude;
                 var long = position.coords.longitude;
-                apiWeather = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat +"&lon="+ long +"&units=metric&APPID=9d1f664d7c8d2bf96dae8ae0cb28164e";
+                apiWeather = `https://api.openweathermap.org/data/2.5/weather?lat=" + lat +"&lon="+ long +"&units=metric&APPID=${process.env.WEATHER_APP_ID}`;
                 getWeather(apiWeather);
             });
 
@@ -59,7 +59,7 @@ $(document).ready(function () {
             $("input[type='text']").keypress(function(e){
                 if(e.which === 13){
                   var city = $(this).val();
-                  apiWeather = "https://api.openweathermap.org/data/2.5/weather?q="+ city +" &units=metric&APPID=9d1f664d7c8d2bf96dae8ae0cb28164e";
+                  apiWeather = `https://api.openweathermap.org/data/2.5/weather?q="+ city +" &units=metric&APPID=${process.env.WEATHER_APP_ID}`;
                   $(this).val("");
                   getWeather(apiWeather);
                 }
