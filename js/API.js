@@ -51,7 +51,7 @@ $(document).ready(function () {
         navigator.geolocation.getCurrentPosition(function (position){
                 var lat = position.coords.latitude;
                 var long = position.coords.longitude;
-                apiWeather = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat +"&lon="+ long +"&units=metric&APPID=9d1f664d7c8d2bf96dae8ae0cb28164e";
+                apiWeather = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat +"&lon="+ long +"&units=metric&APPID=9d1f664d7c8d2bf96dae8ae0cb28164e";
                 getWeather(apiWeather);
             });
 
@@ -59,7 +59,7 @@ $(document).ready(function () {
             $("input[type='text']").keypress(function(e){
                 if(e.which === 13){
                   var city = $(this).val();
-                  apiWeather = "http://api.openweathermap.org/data/2.5/weather?q="+ city +" &units=metric&APPID=9d1f664d7c8d2bf96dae8ae0cb28164e";
+                  apiWeather = "https://api.openweathermap.org/data/2.5/weather?q="+ city +" &units=metric&APPID=9d1f664d7c8d2bf96dae8ae0cb28164e";
                   $(this).val("");
                   getWeather(apiWeather);
                 }
